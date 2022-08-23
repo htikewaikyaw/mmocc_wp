@@ -9,7 +9,7 @@
                 </button><!-- .nav-toggle -->
 
                 <div class="menu-search-form widget_search">
-                    <?php get_search_form(); ?>
+                    <?php //get_search_form(); ?>
                 </div>
 
                 <div class='sparkle-tab-wrap'>
