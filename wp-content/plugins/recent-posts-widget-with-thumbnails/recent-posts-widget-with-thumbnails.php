@@ -136,7 +136,7 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
         $orderby          = ( ! empty( $instance[ 'orderby' ] ) ) ? $instance[ 'orderby' ] : $this->defaults[ 'orderby' ];
         $order            = ( ! empty( $instance[ 'order' ] ) && 'rand' != $orderby ) ? $instance[ 'order' ] : $this->defaults[ 'order' ];
 
-        $featured			  = ( ! empty( $instance[ 'featured' ] ) ) ? $instance[ 'featured' ] : $this->defaults[ 'featured' ]; //by hwk
+        $featured		= ( ! empty( $instance[ 'show_featured' ] ) ) ? $instance[ 'show_featured' ] : $this->defaults[ 'show_featured' ]; //by hwk
 
 		// initialize integer variables
 		$ints = array();
@@ -173,10 +173,6 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
             'orderby'        => $orderby	
 
         );
-
-		// if($featured) {
-		// 	$query_args[ 'featured' ] = $featured;
-		// }
 
 		if( 'rand' != $orderby ) {
             $query_args[ 'order' ] = $order;
@@ -249,10 +245,9 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 
         // run the query: get the latest posts
 		$r = new WP_Query( apply_filters( 'rpwwt_widget_posts_args', $query_args ) );
-		// var_dump($featured);exit();
-		// if($featured){
-			$r = new WP_Query( apply_filters( 'rpwwt_widget_posts_args', "meta_value=featured" ) );
-		// }
+		if($featured){
+			$r = new WP_Query( apply_filters( 'rpwwt_widget_posts_args', "meta_value=true" ) );
+		}
 
 		// remove correction function if query includes sticky posts and categories filter
 		if ( isset( $query_args[ 'category__in' ] ) and $bools[ 'keep_sticky' ] ) {
