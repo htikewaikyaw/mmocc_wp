@@ -527,12 +527,34 @@ function wp_dropdown_categories( $args = '' ) {
  *                           False if the taxonomy does not exist.
  */
 function wp_list_categories( $args = '' ) {
+
+	//retrieve subcategories of projects and show these catgories in sidebar at project page by hwk
+
+	$exclude_categories = array();
+	$parent_cat_name = "";
+	$term = get_queried_object();
+	$term_name = $term->name;
+	$term_id = $term->term_id;
+	$parent_id = $term->parent;
+	if( strtolower($term_name) === "projects" || $parent_id == 15){
+		$categories_ids = get_terms(
+		    array( 'category' ), // Taxonomies
+		    array( 'fields' => 'ids' ) // Fields
+		);
+		$category_id = get_cat_ID('projects');
+		$show_categories  = get_term_children( $category_id, "category" );
+		if(!empty($show_categories)){
+			array_push($show_categories, $category_id);
+		}
+		$exclude_categories = array_diff($categories_ids,$show_categories );
+	}
+
 	$defaults = array(
 		'child_of'            => 0,
 		'current_category'    => 0,
 		'depth'               => 0,
 		'echo'                => 1,
-		'exclude'             => '',
+		'exclude'             => $exclude_categories,
 		'exclude_tree'        => '',
 		'feed'                => '',
 		'feed_image'          => '',
@@ -552,9 +574,11 @@ function wp_list_categories( $args = '' ) {
 		'use_desc_for_title'  => 1,
 	);
 
-	$parsed_args = wp_parse_args( $args, $defaults );
+	
 
+	$parsed_args = wp_parse_args( $args, $defaults );
 	if ( ! isset( $parsed_args['pad_counts'] ) && $parsed_args['show_count'] && $parsed_args['hierarchical'] ) {
+		
 		$parsed_args['pad_counts'] = true;
 	}
 
@@ -584,7 +608,7 @@ function wp_list_categories( $args = '' ) {
 
 	$show_option_all  = $parsed_args['show_option_all'];
 	$show_option_none = $parsed_args['show_option_none'];
-
+	
 	$categories = get_categories( $parsed_args );
 
 	$output = '';
@@ -677,7 +701,6 @@ function wp_list_categories( $args = '' ) {
 		return $html;
 	}
 }
-
 /**
  * Displays a tag cloud.
  *
