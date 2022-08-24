@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
     $(window).on('scroll', function () {
 
         if ($(this).scrollTop() > 50) {
-            $('header.cons-agency .nav-classic').css("background-color",'#fff');
+            $('header.cons-agency .nav-classic').css("background-color",'#f0f0f0');
             $('.box-header-nav .main-menu > .menu-item > a').css("color","#000");
             $('.box-header-nav .main-menu > .menu-item.current-menu-item > a').css("color","#F8931F");
 

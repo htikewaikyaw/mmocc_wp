@@ -308,7 +308,7 @@ header.cons-agency .nav-classic {
     display:flex;
     position:relative!important;
     top:0!important;
-    border-bottom: 1px solid #f8931f;
+    /* border-bottom: 1px solid #f8931f; */
 }
 .construction-masonry .entry-meta{
     display: none;
@@ -375,7 +375,8 @@ header.cons-agency .nav-classic {
     display:flex;
     position:relative!important;
     top:0!important;
-    border-bottom: 1px solid #F8931F;
+    padding: 30px 0px 0px 20px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 }
 .construction-masonry .entry-meta{
     display: none;
@@ -404,6 +405,24 @@ header.cons-agency .nav-classic {
     background: #955813;
     color: #fff;
     border-color: #955813;
+}
+
+.articlesListing .construction-masonry .box .btn-primary{
+    background: #f8931f;
+}
+
+.widget_categories{
+    background: #f0f0f0;
+    padding: 20px;
+}
+#categories-1  .widget-title{
+    border-bottom: 2px solid #c2c2c2;
+}
+.widget_categories a::before{
+    color: #c0c0c0;
+}
+.site-content{
+    padding-top: 20px;;
 }
 .site-content{
     /*background-image:'../../uploads/inle-lake.png';*/

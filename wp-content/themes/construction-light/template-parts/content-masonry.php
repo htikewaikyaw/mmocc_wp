@@ -62,7 +62,8 @@ if( function_exists( 'pll_register_string' ) ){
 		</div>
 		
 		<?php if ( 'excerpt' === $post_content_type ) { ?>
-			<div class="btns text-center">
+			<!-- <div class="btns text-center"> -->
+			<div class="btns text-left">
 				<a href="<?php the_permalink(); ?>" class="btn btn-primary">
 					<span><?php echo esc_html( $blogreadmore_btn ); ?><i class="fas fa-arrow-right"></i></span>
 				</a>
