@@ -1,6 +1,8 @@
+
 <?php echo $args[ 'before_widget' ] . "\n"; ?>
 <div id="rpwwt-<?php echo $args[ 'widget_id' ];?>" class="rpwwt-widget">
 	
+<h2 class="section-title">Our Featured Projects</h3>
 <?php 
 	if ( $title ) echo $args[ 'before_title' ] . $title . $args[ 'after_title' ] . "\n";
 	if ( $this->defaults[ 'is_nav_widget' ] ) { ?>

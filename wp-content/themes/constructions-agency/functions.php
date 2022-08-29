@@ -297,52 +297,23 @@ endif;
 
 
 
-
-
-// quick_edit_custom_box allows to add HTML in Quick Edit
-add_action( 'quick_edit_custom_box',  'featured_quick_edit_fields', 10, 2 );
-
-function featured_quick_edit_fields( $column_name, $post_type ) {?>
-	<fieldset class="inline-edit-col-left">
-		<div class="inline-edit-col">
-			<label>
-				<span class="title">Featured</span>
-				<input type="text" name="featured">
-			</label>
-		</div>
-	</fieldset>
-<?php
-}
-
 /*********add featured custom fields for projects**************/
 // add new columns
 add_filter( 'manage_post_posts_columns', 'featured_columns' );
 // the above hook will add columns only for default 'post' post type, for CPT:
 // manage_{POST TYPE NAME}_posts_columns
 function featured_columns( $column_array ) {
-
 	$column_array[ 'featured' ] = 'Featured';
 	return $column_array;
 }
 
 // Populate our new columns with data
-add_action( 'manage_posts_custom_column', 'populate_featured_columns', 10, 2 );
-function populate_featured_columns( $column_name, $post_id ) {
-	echo get_post_meta( $post_id, 'featured', true );
-			
-}
+add_action( 'manage_posts_custom_column', 'populate_featured_column', 10, 2 );
 
-add_action( 'save_post', 'featured_quick_edit_save' );
-function featured_quick_edit_save( $post_id ){
-
-	// check inlint edit nonce
-	if ( ! wp_verify_nonce( $_POST[ '_inline_edit' ], 'inlineeditnonce' ) ) {
-		return;
+function populate_featured_column( $column_name, $post_id ) {
+	if($column_name == "featured"){
+		echo get_post_meta( $post_id, '_wp_post_meta_feature', true ) ? "feature" :"";
 	}
-	// update checkbox
-	$featured = ( isset( $_POST[ 'featured' ] ) && 'featured' == $_POST[ 'featured' ] ) ? 'featured' : '';
-	update_post_meta( $post_id, 'featured', $featured );
-
 }
 
 add_action( 'admin_print_scripts', function() {
@@ -362,21 +333,78 @@ add_action( 'admin_print_scripts', function() {
 					post_id = parseInt( this.getId( post_id ) );
 				}
 
-				// add rows to variables
-				const edit_row = $( '#edit-' + post_id );
-				const post_row = $( '#post-' + post_id );
-				
-				const featured = $( '.column-meta', post_row ).text();
-				
-				// populate the inputs with column data
-				$( ':input[name="featured"]', edit_row ).val( featured );
-				// $( ':input[name="featured"]', edit_row ).prop( 'checked', featuredProduct );
+				if ( post_id > 0 ) {
+		            // define the edit row
+		            var $edit_row = $( '#edit-' + post_id );
+		            var $post_row = $( '#post-' + post_id );
+		            // get the data
+		            var $feature = !! $( '.column-featured', $post_row ).text();
+		            // populate the data
+		            $( ':input[name="meta-box-checkbox"]', $edit_row ).prop('checked', $feature );
+		        }
 				
 			}
 		});
 		</script>
 EOT;
 }, PHP_INT_MAX );
+
+// add custom meta box in post by hwk 
+function add_custom_meta_box() {
+    $screens = [ 'post' ];
+    foreach ( $screens as $screen ) {
+        add_meta_box(
+            'box_id',                 // Unique ID
+            'Featured',      // Box title
+            'custom_meta_box_html',  // Content callback, must be of type callable
+            $screen                            // Post type
+        );
+    }
+}
+add_action( 'add_meta_boxes', 'add_custom_meta_box' );
+function custom_meta_box_html( $post ) {
+	$value = get_post_meta( $post->ID, '_wp_post_meta_feature', true );
+	?>
+    <input name="meta-box-checkbox" type="checkbox" value="true" <?php checked( 'true',$value ); ?>>
+    <label for="meta-box-checkbox">Feature</label>
+
+	
+    <?php
+}
+//save meta-box-checkbox value
+function save_checkbox_postdata( $post_id ) {
+    if ( array_key_exists( 'meta-box-checkbox', $_POST ) ) {
+		// print_r($_POST['meta-box-checkbox']);exit;
+        update_post_meta(
+            $post_id,
+            '_wp_post_meta_feature',
+            $_POST['meta-box-checkbox']
+        );
+    }else{
+    	update_post_meta(
+            $post_id,
+            '_wp_post_meta_feature',
+            false
+        );
+    }
+}
+add_action( 'save_post', 'save_checkbox_postdata' );
+
+// show meta-box-checkbox in quick edit mode.
+add_action( 'quick_edit_custom_box',  'featured_quick_edit_field', 12, 2 );
+
+function featured_quick_edit_field( $column_name,$post_id) {
+	if($column_name == "featured"){
+	?>
+	<fieldset class="inline-edit-col-left">
+		<label class="alignleft inline-edit-feature">
+			<input id = "chk" name="meta-box-checkbox" classs = "feature-checkbox" type="checkbox" value="true" <?php checked('true',$value) ?>>
+			<span class="checkbox-title">Feature</span>
+		</label>
+	</fieldset>
+<?php
+	}
+}
 
 /**
  * starter content

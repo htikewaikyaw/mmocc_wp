@@ -1015,6 +1015,8 @@ span.sub-toggle {
     font-weight: 700;
     margin: 0;
     color: #212529;
+    /*additional css by mmocc team*/
+    text-align: left;
 }
 
 .box-header-nav .main-menu .children li:not(:first-child)::before,
@@ -2220,6 +2222,9 @@ body.boxed .nav-classic .site-branding a:before {
 
 .nav-classic .header-middle-inner>*:not(:last-child) {
     padding-right: 15px;
+    /*adding custom margin by mmocc team*/
+    margin-top:8px;
+    margin-bottom:6px;
 }
 
 .headertwo .nav-classic .site-branding .brandinglogo-wrap {

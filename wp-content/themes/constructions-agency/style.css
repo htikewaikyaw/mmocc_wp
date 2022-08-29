@@ -17,6 +17,17 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 */
+
+@font-face {
+    font-family: 'Myanmar3';
+    src:url('fonts/Myanmar3.ttf.woff') format('woff'),
+        url('fonts/Myanmar3.ttf.svg#Myanmar3') format('svg'),
+        url('fonts/Myanmar3.ttf.eot'),
+        url('fontt/Myanmar3.ttf.eot?#iefix') format('embedded-opentype'); 
+        font-weight: normal;
+        font-style: normal;
+}
+
 header.cons-agency .box-header-nav .main-menu .children, 
 header.cons-agency .box-header-nav .main-menu .sub-menu,
 header.cons-agency .cons_light_top_bar{
@@ -46,7 +57,7 @@ header.cons-agency .box-header-nav .main-menu .page_item a,
 header.cons-agency .box-header-nav .main-menu>.menu-item>a {
     margin: 0;
     /*last padding 14px to 10px*/
-    padding: 18px 10px;
+    padding: 5px 15px;
     font-size: 12px;
 }
 
@@ -297,7 +308,7 @@ header.cons-agency .nav-classic {
     display:flex;
     position:relative!important;
     top:0!important;
-    border-bottom: 1px solid #f8931f;
+    /* border-bottom: 1px solid #f8931f; */
 }
 .construction-masonry .entry-meta{
     display: none;
@@ -364,7 +375,8 @@ header.cons-agency .nav-classic {
     display:flex;
     position:relative!important;
     top:0!important;
-    border-bottom: 1px solid #F8931F;
+    padding: 30px 0px 0px 20px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 }
 .construction-masonry .entry-meta{
     display: none;
@@ -393,6 +405,29 @@ header.cons-agency .nav-classic {
     background: #955813;
     color: #fff;
     border-color: #955813;
+}
+
+.articlesListing .construction-masonry .box .btn-primary{
+    background: #f8931f;
+}
+
+.widget_categories{
+    background: #f0f0f0;
+    padding: 20px;
+}
+#categories-1  .widget-title{
+    border-bottom: 2px solid #c2c2c2;
+}
+.widget_categories a::before{
+    color: #c0c0c0;
+}
+/*
+.site-content{
+    padding-top: 20px;
+}
+*/
+.breadcrumb{
+    padding: 150px 0px 30px 0px;
 }
 .site-content{
     /*background-image:'../../uploads/inle-lake.png';*/
@@ -424,4 +459,160 @@ header.cons-agency .nav-classic {
 }
 .cons_light_top_bar .top-bar-menu.right ul{
     margin-right: 14%;
+}
+
+/* language switcher */
+
+#trp-floater-ls{
+    left:90%;
+    box-shadow:none;
+}
+
+#trp-floater-ls-current-language a{
+    padding:10px;
+}
+#trp-floater-ls.trp-top-right {
+    border-radius:5px;
+    top:16px;
+    
+}
+#trp-floater-ls.trp-color-dark{
+    background:rgba(241, 241, 241, 0.6);
+}
+
+.banner-slider .slider-item .slider-content .slider-title{
+    word-wrap: break-word;
+    line-height: 1.3em;
+    font-family: Oswald,Myanmar3;
+}
+.banner-slider .slider-item .slider-content p{
+    word-wrap: break-word;
+    line-height: 2em;
+    font-family: Oswald,Myanmar3;
+}
+.banner-slider .slider-item .slider-content .btn-area .btn-border,
+.cons_light_feature .feature-list .bottom-content h4,
+.section-title,
+.section-tagline,
+.cons_light_feature .feature-list h3 a,
+.cons_light_feature.layout_four .feature-list .bottom-content p,
+.calltoaction_promo_wrapper .calltoaction_full_widget_content h2,
+.site-footer .textwidget h4, 
+.site-footer .textwidget p {
+    font-family: "Oswald",Myanmar3;
+}
+
+#rpwwt-recent-posts-widget-with-thumbnails-9 h2{
+    font-weight: 400;
+    padding-bottom:20px;
+}
+header.cons-agency .nav-classic{
+    z-index: 10;
+}
+
+.nav-classic .site-branding{
+    width: 30%;
+    max-width: 30%;
+}
+.nav-classic .nav-menu{
+    width:68%;
+}
+.nav-classic .container .site-branding .brandinglogo-wrap img {
+   
+}
+header.cons-agency .nav-classic .nav-menu .box-header-nav {
+    text-align: right;
+}
+
+.section-tagline{
+    word-wrap: break-word;
+}
+.cons_light_feature.layout_four .feature-list .bottom-content p{
+    word-wrap: break-word;
+}
+.calltoaction_promo_wrapper .calltoaction_full_widget_content h2{
+    word-wrap: break-word;
+    line-height: 1.5em;
+}
+.cons_light_feature.layout_four .feature-list  h3{
+    word-wrap: break-word;
+}
+
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .nav-classic .container .site-branding .brandinglogo-wrap img{
+        width: 50%;
+    }
+}
+
+@media (max-width: 991.98px) { 
+    
+    /* Latest News */
+    .cons_light_blog-list-area article {
+        width: 100%;
+        display: block;
+    }
+    .cons_light_blog-list-area article .blog-post-thumbnail{
+        width: 100%;
+    }
+    .cons_light_blog-list-area article .box{
+        width:100%;
+        margin:0 auto;
+    }
+    .construction-masonry article{
+        display:block;
+    }
+    .articlesListing .article .blog-post-thumbnail{
+        width:100%;
+    }
+    .articlesListing .article .box {
+        width:100%;
+        margin:0px;
+        padding:0px;
+    }
+    /* home page banner section */
+    .banner-slider .slider-item {
+        height:400px;
+    }
+    .banner-slider .slider-item .slider-content .slider-title{
+        font-size: 28px;
+        /* margin-top: 100px; */
+    }
+    
+    .banner-slider .slider-item .slider-content p {
+        font-size:16px;
+        line-height: unset;
+        padding:5px;
+    }
+    
+    .owl-carousel .owl-nav button.owl-prev,.owl-carousel .owl-nav button.owl-next{
+        width:30px;
+        height: 30px;
+        padding:0 10px;
+    }
+    #trp-floater-ls.trp-top-right {
+        position: fixed;
+        z-index: 9999999;
+        bottom: 0;
+        left: 80%;
+        border-radius: 5px 5px 0 0;
+        display: block;
+        overflow: hidden;
+        top:auto;
+    }
+    body.admin-bar #trp-floater-ls.trp-top-right{
+        top:auto;
+    }
+    #trp-floater-ls.trp-color-dark{
+        background: rgba(241,147,31,0.6);
+    }
+    .nav-classic .site-branding {
+        width: 100%;
+    }
+    button.mobile-nav-toggle .toggle-text {
+        display: none;
+    }
+    .banner-table{
+        table-layout: fixed;
+        padding-top:60px;
+    }
 }
