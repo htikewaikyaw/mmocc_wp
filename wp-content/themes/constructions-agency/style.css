@@ -643,3 +643,33 @@ header.cons-agency .nav-classic .nav-menu .box-header-nav {
         padding-top:60px;
     }
 }
+
+/*contact us call action button*/
+.menu-button-contact{
+    border: 1px solid #fff;
+    color: #fff !important;
+    border-radius:5px;
+    -webkit-box-shadow:1px 1px 0px 0px #2f2f2f;
+    -moz-box-shadow:1px 1px 0px 0px #2f2f2f;
+    box-shadow:1px 1px 0px 0px #2f2f2f;
+    background-color:transparent;
+    -webkit-animation: glowing 1300ms infinite;
+    -moz-animation: glowing 1300ms infinite;
+    -o-animation: glowing 1300ms infinite;
+    animation: glowing 1300ms infinite;
+}
+@-webkit-keyframes glowing {
+    0% {
+    background-color: #ffc107;
+    -webkit-box-shadow: 0 0 3px #ffc107;
+    }
+    50% {
+    background-color: #f8931f;
+    -webkit-box-shadow: 0 0 15px #f8931f;
+    }
+    100% {
+    background-color: #ffc107;
+    -webkit-box-shadow: 0 0 3px #ffc107;
+    }
+}
+    
