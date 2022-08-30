@@ -15,6 +15,7 @@
  * @param int|string|WP_Term $menu Menu ID, slug, name, or object.
  * @return WP_Term|false Menu object on success, false if $menu param isn't supplied or term does not exist.
  */
+
 function wp_get_nav_menu_object( $menu ) {
 	$menu_obj = false;
 
@@ -815,7 +816,6 @@ function wp_setup_nav_menu_item( $menu_item ) {
 			$menu_item->object_id        = ! isset( $menu_item->object_id ) ? get_post_meta( $menu_item->ID, '_menu_item_object_id', true ) : $menu_item->object_id;
 			$menu_item->object           = ! isset( $menu_item->object ) ? get_post_meta( $menu_item->ID, '_menu_item_object', true ) : $menu_item->object;
 			$menu_item->type             = ! isset( $menu_item->type ) ? get_post_meta( $menu_item->ID, '_menu_item_type', true ) : $menu_item->type;
-
 			if ( 'post_type' === $menu_item->type ) {
 				$object = get_post_type_object( $menu_item->object );
 				if ( $object ) {
@@ -976,7 +976,7 @@ function wp_setup_nav_menu_item( $menu_item ) {
 		$menu_item->xfn         = '';
 
 	}
-
+	
 	/**
 	 * Filters a navigation menu item object.
 	 *

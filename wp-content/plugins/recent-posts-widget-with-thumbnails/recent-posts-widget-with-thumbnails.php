@@ -165,7 +165,7 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 
 		// ToDo: add option to filter custom post types as well
 		// standard params
-
+		
 		$query_args = array(
 			'posts_per_page' => $ints[ 'number_posts' ],
 			'no_found_rows'  => true,
@@ -243,11 +243,13 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 			add_filter( 'the_posts', array( $this, 'get_stickies_on_top' ) );
 		}
 
-        // run the query: get the latest posts
-		$r = new WP_Query( apply_filters( 'rpwwt_widget_posts_args', $query_args ) );
-		if($featured){
+		if($featured){ //filter by featured
 			$r = new WP_Query( apply_filters( 'rpwwt_widget_posts_args', "meta_value=true" ) );
 		}
+		
+        // run the query: get the latest posts
+		$r = new WP_Query( apply_filters( 'rpwwt_widget_posts_args', $query_args ) );
+		
 
 		// remove correction function if query includes sticky posts and categories filter
 		if ( isset( $query_args[ 'category__in' ] ) and $bools[ 'keep_sticky' ] ) {

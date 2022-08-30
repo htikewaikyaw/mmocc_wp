@@ -6,7 +6,7 @@ $content = get_theme_mod('construction_light_free_text');
 $img = get_theme_mod('construction_light_pro_freetext_image');
 $css = "";
 if($img){
-   $css = "style=background:url('". $img ."')";
+   $css = "style=background:url('". $img ."');background-size:cover;background-position:bottom right;background-repeat:no-repeat;";
 }
 ?>
 <section id="free-hand-text-section" class="free-hand-text-section st-py-default bg-primary-light" <?php echo esc_attr( $css ); ?>>

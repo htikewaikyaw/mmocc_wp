@@ -422,7 +422,7 @@ header.cons-agency .nav-classic {
     color: #c0c0c0;
 }
 .site-content{
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 .breadcrumb{
@@ -504,6 +504,24 @@ header.cons-agency .nav-classic {
 #rpwwt-recent-posts-widget-with-thumbnails-9 h2{
     font-weight: 400;
     padding-bottom:20px;
+    color:#f8931f;
+}
+#cl_blog .section-title{
+    font-weight: 400;
+    color:#f8931f;
+}
+#recent_posts_with_thumbnail{
+    justify-content: center;
+}
+.cons_light_feature .feature-list .box figure{
+    border-radius: 0;
+}
+.cons_light_feature .feature-list .box{
+    box-shadow: none;
+    border:1px solid #f8931f;
+}
+.calltoaction_promo_wrapper::before{
+    background: rgba(0,0,0,0.3);
 }
 header.cons-agency .nav-classic{
     z-index: 10;
@@ -516,9 +534,7 @@ header.cons-agency .nav-classic{
 .nav-classic .nav-menu{
     width:70%;
 }
-.nav-classic .container .site-branding .brandinglogo-wrap img {
-   
-}
+
 header.cons-agency .nav-classic .nav-menu .box-header-nav {
     text-align: right;
 }
@@ -537,6 +553,17 @@ header.cons-agency .nav-classic .nav-menu .box-header-nav {
     word-wrap: break-word;
 }
 
+/* business solution section */
+#free-hand-text-section h3{
+    color: #F8931F;
+    font-size: 3em;
+    font-weight: 400;
+}
+#free-hand-text-section a{
+    border: 1px solid #f8931f;
+    background: transparent;
+    color: #f8931f;
+}
 @media (max-width: 991.98px) and (min-width: 576px) {
     .nav-classic .container .site-branding .brandinglogo-wrap img{
         width: 50%;

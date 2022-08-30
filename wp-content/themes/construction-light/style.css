@@ -6838,8 +6838,10 @@ Slider Nav Style 2
 }
 
 #free-hand-text-section {
-    padding: 50px 0;
+    /* padding: 50px 0; */
     position: relative;
+    padding: 50px 0px 200px 0px;
+    
 }
 #free-hand-text-section::before{
     content: '';
@@ -6848,8 +6850,10 @@ Slider Nav Style 2
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(78, 75, 75, 0.589);
-    z-index: 0;
+    /* background-color: rgba(78, 75, 75, 0.589); */
+    background-color: #f0f0f0;
+    /* z-index: 0; */
+    z-index: -1;
 }
 .cons-register-now-form {
     margin: 80px 0;
