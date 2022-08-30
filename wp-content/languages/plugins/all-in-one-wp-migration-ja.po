@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - All-in-One WP Migration - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-08-18 08:23:14+0000\n"
+"PO-Revision-Date: 2022-08-26 13:07:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,13 +11,17 @@ msgstr ""
 "Language: ja_JP\n"
 "Project-Id-Version: Plugins - All-in-One WP Migration - Stable (latest release)\n"
 
+#: functions.php:68 functions.php:110
+msgid "Your archive file name contains invalid characters. It cannot contain: < > : \" | ? * \\0. <a href=\"https://help.servmask.com/knowledgebase/invalid-archive-name/\" target=\"_blank\">Technical details</a>"
+msgstr "アーカイブファイル名に不正な文字が含まれています: < > : \" | ? * \\0. <a href=\"https://help.servmask.com/knowledgebase/invalid-archive-name/\" target=\"_blank\">詳細情報</a>"
+
+#: functions.php:43
+msgid "Your storage directory name contains invalid characters. It cannot contain: < > : \" | ? * \\0. <a href=\"https://help.servmask.com/knowledgebase/invalid-storage-name/\" target=\"_blank\">Technical details</a>"
+msgstr "ストレージディレクトリ名に不正な文字が含まれています: < > : \" | ? * \\0. <a href=\"https://help.servmask.com/knowledgebase/invalid-storage-name/\" target=\"_blank\">詳細情報</a>"
+
 #: lib/model/import/class-ai1wm-import-check-encryption.php:59
 msgid "Backup is encrypted. Please provide decryption password: "
 msgstr "バックアップは暗号化されています。復号化パスワードを入力してください: "
-
-#: functions.php:43
-msgid "Invalid storage path. <a href=\"https://help.servmask.com/knowledgebase/invalid-storage-path/\" target=\"_blank\">Technical details</a>"
-msgstr "ストレージのパスが無効です。<a href=\"https://help.servmask.com/knowledgebase/invalid-storage-path/\" target=\"_blank\">詳細はこちら</a>"
 
 #: lib/view/export/advanced-settings.php:64
 msgid "Password-protect and encrypt backups"
@@ -636,10 +640,6 @@ msgstr "%sに書き込めません。<a href=\"https://help.servmask.com/knowled
 #: functions.php:1445
 msgid "Unable to open %s with mode %s. <a href=\"https://help.servmask.com/knowledgebase/invalid-file-permissions/\" target=\"_blank\">Technical details</a>"
 msgstr "%sを%sモードで開くことができません。<a href=\"https://help.servmask.com/knowledgebase/invalid-file-permissions/\" target=\"_blank\">技術情報</a>"
-
-#: functions.php:68 functions.php:110
-msgid "Invalid archive path. <a href=\"https://help.servmask.com/knowledgebase/invalid-archive-path/\" target=\"_blank\">Technical details</a>"
-msgstr "アーカイブパスが無効です。<a href=\"https://help.servmask.com/knowledgebase/invalid-archive-path/\" target=\"_blank\">技術情報</a>"
 
 #: functions.php:63 functions.php:105
 msgid "Unable to locate archive path. <a href=\"https://help.servmask.com/knowledgebase/invalid-archive-path/\" target=\"_blank\">Technical details</a>"

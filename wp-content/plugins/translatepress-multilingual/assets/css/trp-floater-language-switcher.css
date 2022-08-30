@@ -160,7 +160,8 @@ body.admin-bar #trp-floater-ls.trp-top-left{
 
 .trp-color-dark #trp-floater-ls-current-language a,
 .trp-color-dark #trp-floater-ls-language-list a {
-    color: #BDBDBD;
+    /*orginal color #BDBDBD has been changed to #fff*/
+    color: #fff;
 }
 .trp-color-light #trp-floater-ls-current-language a,
 .trp-color-light #trp-floater-ls-language-list a {
@@ -174,6 +175,9 @@ body.admin-bar #trp-floater-ls.trp-top-left{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    /*mmocc team*/
+    margin-top: -4px;
+    margin-bottom: -4px;
 }
 
 #trp-floater-ls-language-list a:hover {

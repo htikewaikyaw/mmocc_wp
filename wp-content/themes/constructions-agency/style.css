@@ -57,7 +57,7 @@ header.cons-agency .box-header-nav .main-menu .page_item a,
 header.cons-agency .box-header-nav .main-menu>.menu-item>a {
     margin: 0;
     /*last padding 14px to 10px*/
-    padding: 18px 10px;
+    padding: 5px 15px;
     font-size: 12px;
 }
 
@@ -421,10 +421,11 @@ header.cons-agency .nav-classic {
 .widget_categories a::before{
     color: #c0c0c0;
 }
+/*
 .site-content{
     padding-top: 20px;
 }
-
+*/
 .breadcrumb{
     padding: 150px 0px 30px 0px;
 }
@@ -514,7 +515,7 @@ header.cons-agency .nav-classic{
     max-width: 30%;
 }
 .nav-classic .nav-menu{
-    width:70%;
+    width:68%;
 }
 .nav-classic .container .site-branding .brandinglogo-wrap img {
    
