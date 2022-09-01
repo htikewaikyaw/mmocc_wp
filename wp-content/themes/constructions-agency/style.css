@@ -553,7 +553,7 @@ header.cons-agency .nav-classic .header-middle-inner{
     margin:5px 0px;
 }
 .nav-classic .container .site-branding .brandinglogo-wrap img{
-    width: 80%;
+    width: 90%;
    
 }
 /* business solution section */
@@ -566,6 +566,11 @@ header.cons-agency .nav-classic .header-middle-inner{
     border: 1px solid #f8931f;
     background: transparent;
     color: #f8931f;
+}
+
+#free-hand-text-section a:hover{
+    background: #f8931f;
+    color: #ffffff;
 }
 
 #trp-floater-ls-current-language a,#trp-floater-ls-language-list a{
