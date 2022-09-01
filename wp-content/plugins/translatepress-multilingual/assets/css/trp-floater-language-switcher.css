@@ -175,9 +175,6 @@ body.admin-bar #trp-floater-ls.trp-top-left{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    /*mmocc team*/
-    margin-top: -4px;
-    margin-bottom: -4px;
 }
 
 #trp-floater-ls-language-list a:hover {

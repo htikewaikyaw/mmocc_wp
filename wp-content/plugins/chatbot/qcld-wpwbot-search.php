@@ -50,7 +50,6 @@ function qc_wpbo_search_responseby_intent(){
 	global $wpdb;
 	$keyword = sanitize_text_field($_POST['keyword']);
 	$table = $wpdb->prefix.'wpbot_response';
-
 	$result = $wpdb->get_row("SELECT `response` FROM `$table` WHERE 1 and `intent` = '".$keyword."'");
 	
 	$response = array('status'=>'fail');
@@ -112,7 +111,6 @@ function qc_wpbo_search_response(){
 	$response_result = array();
 
 	$status = array('status'=>'fail', 'multiple'=>false);
-
 	$results = $wpdb->get_results("SELECT `query`, `response` FROM `$table` WHERE 1 and `query` = '".$keyword."'");
 	
 	if(!empty($results)){

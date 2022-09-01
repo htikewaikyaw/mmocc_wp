@@ -421,11 +421,7 @@ header.cons-agency .nav-classic {
 .widget_categories a::before{
     color: #c0c0c0;
 }
-/*
-.site-content{
-    /* padding-top: 20px; */
-}
-*/
+
 .breadcrumb{
     padding: 150px 0px 30px 0px;
 }
@@ -529,11 +525,11 @@ header.cons-agency .nav-classic{
 }
 
 .nav-classic .site-branding{
-    width: 30%;
-    max-width: 30%;
+    width: 25%;
+    max-width: 25%;
 }
 .nav-classic .nav-menu{
-    width:68%;
+    width:75%;
 }
 
 header.cons-agency .nav-classic .nav-menu .box-header-nav {
@@ -553,7 +549,13 @@ header.cons-agency .nav-classic .nav-menu .box-header-nav {
 .cons_light_feature.layout_four .feature-list  h3{
     word-wrap: break-word;
 }
-
+header.cons-agency .nav-classic .header-middle-inner{
+    margin:5px 0px;
+}
+.nav-classic .container .site-branding .brandinglogo-wrap img{
+    width: 80%;
+   
+}
 /* business solution section */
 #free-hand-text-section h3{
     color: #F8931F;
@@ -564,6 +566,19 @@ header.cons-agency .nav-classic .nav-menu .box-header-nav {
     border: 1px solid #f8931f;
     background: transparent;
     color: #f8931f;
+}
+
+#trp-floater-ls-current-language a,#trp-floater-ls-language-list a{
+    padding: 2px 5px;
+}
+.trp-color-dark #trp-floater-ls-language-list a{
+    font-size: 12px;
+}
+
+#trp-floater-ls{
+    right:2%;
+    left:auto;
+    z-index: 10;
 }
 @media (max-width: 991.98px) and (min-width: 576px) {
     .nav-classic .container .site-branding .brandinglogo-wrap img{
