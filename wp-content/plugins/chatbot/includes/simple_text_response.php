@@ -244,15 +244,15 @@ global $wpdb;
 
     <?php endif; ?>
 <script type="text/javascript">
-	var stopcheckBox = document.getElementById("qc_bot_str_remove_stopwords");
-	stopcheckBox.addEventListener('change', function () {
-		if (stopcheckBox.checked == true){
-			stopcheckBox.value = "1";
+	// var stopcheckBox = document.getElementById("qc_bot_str_remove_stopwords");
+	// stopcheckBox.addEventListener('change', function () {
+	// 	if (stopcheckBox.checked == true){
+	// 		stopcheckBox.value = "1";
 			
-		} else {
-			stopcheckBox.value = "0";
-		}
-    });
+	// 	} else {
+	// 		stopcheckBox.value = "0";
+	// 	}
+    // });
 
 	var small_talk = document.getElementById('small_talk');
 	small_talk.addEventListener( 'click', () => { small_talk_import(); } );

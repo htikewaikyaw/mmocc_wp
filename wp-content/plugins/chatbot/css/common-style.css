@@ -1557,10 +1557,28 @@ span.chatbot_intent_reload {
 		padding-top: 15px !important;
 	}
 }
-.wpb-search-result{}
-.wpb-search-result p{}
-.wpb-search-result a{display: block;
+.wpb-search-result{
+
+}
+.wpb-search-result p{
+
+}
+.wpb-search-result a{
+    display: block;
     background: #fff;
     margin-bottom: 7px;
-    padding: 5px;}
+    padding: 5px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    .qcwp-chatbot-search-article input:focus,
+    .qcwp-chatbot-search-article input {
+      font-size: 14px;
+    }
+      
+    input#wp-chatbot-editor:focus,
+    input#wp-chatbot-editor {
+      font-size: 14px;
+    }	
+      
+  }
 

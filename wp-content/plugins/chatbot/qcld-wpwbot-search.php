@@ -50,6 +50,7 @@ function qc_wpbo_search_responseby_intent(){
 	global $wpdb;
 	$keyword = sanitize_text_field($_POST['keyword']);
 	$table = $wpdb->prefix.'wpbot_response';
+
 	$result = $wpdb->get_row("SELECT `response` FROM `$table` WHERE 1 and `intent` = '".$keyword."'");
 	
 	$response = array('status'=>'fail');
@@ -111,6 +112,7 @@ function qc_wpbo_search_response(){
 	$response_result = array();
 
 	$status = array('status'=>'fail', 'multiple'=>false);
+
 	$results = $wpdb->get_results("SELECT `query`, `response` FROM `$table` WHERE 1 and `query` = '".$keyword."'");
 	
 	if(!empty($results)){
@@ -151,13 +153,15 @@ function qc_wpbo_search_response(){
 	if(empty($response_result)){
 
 		$fields = get_option('qc_bot_str_fields');
-		if($fields && !empty($fields)){
+		if($fields && !empty($fields) && class_exists('Qcld_str_pro')){
 			$qfields = implode(', ', $fields);
 		}else{
 			$qfields = '`query`,`keyword`,`response`';
 		}
-		$results = $wpdb->get_results("SELECT `query`, `response`, MATCH($qfields) AGAINST('".$keyword."' IN NATURAL LANGUAGE MODE) as score FROM $table WHERE MATCH($qfields) AGAINST('".$keyword."' IN NATURAL LANGUAGE MODE) order by score desc limit 15");
-
+		$sql = "ALTER TABLE `{$table}` ADD FULLTEXT($qfields);";
+		$wpdb->query( $sql );
+		$sql_text = "SELECT `query`, `response`, MATCH($qfields) AGAINST('".$keyword."' IN NATURAL LANGUAGE MODE) as score FROM `$table` WHERE MATCH($qfields) AGAINST('".$keyword."' IN NATURAL LANGUAGE MODE) order by score desc limit 15";
+		$results = $wpdb->get_results($sql_text);
 		$weight = get_option('qc_bot_str_weight')!=''?get_option('qc_bot_str_weight'):'0.4';
 		//$weight = 0;
 		if(!empty($results)){

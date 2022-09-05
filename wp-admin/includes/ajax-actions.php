@@ -19,6 +19,7 @@
  *
  * @since 3.6.0
  */
+
 function wp_ajax_nopriv_heartbeat() {
 	$response = array();
 
@@ -5524,3 +5525,4 @@ function wp_ajax_send_password_reset() {
 		wp_send_json_error( $results->get_error_message() );
 	}
 }
+

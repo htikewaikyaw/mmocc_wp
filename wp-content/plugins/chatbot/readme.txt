@@ -4,7 +4,7 @@ Donate link: https://www.quantumcloud.com/products/
 Tags: bot, chatbot, chat bot, live chat, live support, contact bot, HelpDesk, FAQ bot, Support bot
 Requires at least: 4.6
 Tested up to: 6.0
-Stable tag: 4.1.4
+Stable tag: 4.1.5
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.quantumcloud.com/products/
@@ -374,6 +374,10 @@ Images, GIFs and Youtube Videos are supprted in the pro version. Pro version als
 2. Simple Text Responses Edit
 
 == Changelog ==
+
+= 4.1.5 =
+# update STR for natural language 
+# fix CSS for iPhone
 
 = 4.1.4 =
 # Improve compatibility with MariaDB

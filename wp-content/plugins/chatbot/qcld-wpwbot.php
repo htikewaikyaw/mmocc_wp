@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/plugins/chatbot/
  * Description: ChatBot is a native WordPress ChatBot plugin to provide quick support and email functionality.
  * Donate link: https://www.quantumcloud.com
- * Version: 4.1.4
+ * Version: 4.1.5
  * @author    QuantumCloud
  * Author: QuantumCloud
  * Author URI: https://www.quantumcloud.com/
@@ -18,7 +18,7 @@
 
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
-define('QCLD_wpCHATBOT_VERSION', '4.1.3');
+define('QCLD_wpCHATBOT_VERSION', '4.1.5');
 define('QCLD_wpCHATBOT_REQUIRED_wpCOMMERCE_VERSION', 2.2);
 define('QCLD_wpCHATBOT_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__));
 define('QCLD_wpCHATBOT_PLUGIN_URL', plugin_dir_url(__FILE__));
