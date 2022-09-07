@@ -521,15 +521,18 @@ header.cons-agency .nav-classic {
     background: rgba(0,0,0,0.3);
 }
 header.cons-agency .nav-classic{
-    z-index: 10;
+    z-index: 9999;
 }
 
+#trp-floater-ls.trp-top-right{
+    z-index: 99999;
+}
 .nav-classic .site-branding{
     width: 25%;
     max-width: 25%;
 }
 .nav-classic .nav-menu{
-    width:75%;
+    /* width:75%; */
 }
 
 header.cons-agency .nav-classic .nav-menu .box-header-nav {
@@ -568,7 +571,8 @@ header.cons-agency .nav-classic .header-middle-inner{
     color: #f8931f;
 }
 #free-hand-text-section p{
-    max-width: 60%;
+    width: 60%;
+    text-align: justify;
 }
 
 #free-hand-text-section a:hover{
@@ -615,6 +619,23 @@ header.cons-agency .nav-classic .header-middle-inner{
 .wp-chatbot-ball{
     box-shadow: #f8931f 0px 4px 20px;
 }
+
+#back-to-top{
+    right:10px;
+    bottom:10px;
+    height: 35px;
+    width: 35px;
+}
+#back-to-top .arrow-top{
+    left:15px;
+    top:12px;
+}
+#back-to-top .arrow-top-line{
+    top:12px;
+}
+#wp-chatbot-chat-container{
+    bottom :10px!important;
+}
 @media (max-width: 991.98px) and (min-width: 576px) {
     .nav-classic .container .site-branding .brandinglogo-wrap img{
         width: 50%;
@@ -628,6 +649,29 @@ header.cons-agency .nav-classic .header-middle-inner{
 }
 .wp-chatbot-animation-active .wp-chatbot-ball-animation-switch{
     border-top-color: #F9B208;
+}
+
+/* oversea remote work service Page*/
+.elementor-widget-wrap{
+    word-wrap: break-word;
+}
+.elementor-2493 .elementor-element.elementor-element-9ad28db > .elementor-widget-container,
+.elementor-2493 .elementor-element.elementor-element-89558c5 .elementor-heading-title,
+.elementor-widget-container,
+.elementor-widget-container > .elementor-heading-title {
+    font-family: "Myanmar3";
+    line-height: 1.5em;
+}
+.elementor-widget-image-box .elementor-image-box-description{
+    font-family: "Myanmar3" ;
+    line-break: anywhere;
+}
+.entry-title{
+    word-wrap: break-word;
+    font-family: "Oswald",Myanmar3 !important;
+}
+.breadcrumb ul li{
+    font-family: "Oswald",Myanmar3 !important;
 }
 @media (max-width: 991.98px) { 
     
@@ -678,11 +722,12 @@ header.cons-agency .nav-classic .header-middle-inner{
         position: fixed;
         z-index: 9999999;
         bottom: 0;
-        left: 80%;
+        left: 3%;
         border-radius: 5px 5px 0 0;
         display: block;
         overflow: hidden;
         top:auto;
+        right: auto;
     }
     body.admin-bar #trp-floater-ls.trp-top-right{
         top:auto;
@@ -700,6 +745,22 @@ header.cons-agency .nav-classic .header-middle-inner{
         table-layout: fixed;
         padding-top:60px;
     }
+
+    #free-hand-text-section p{
+        width: 100%;
+    }
+    #free-hand-text-section h3{
+        font-family: "Oswald,Myanmar3";
+        word-wrap: break-word;
+        text-align: center;
+    }
+    .cons_light_blog-list-area ul li{
+        margin-left:-20px;
+    }
+    .elementor-element.elementor-element-58b270b > .elementor-element-populated{
+        margin: 0 auto;
+    }
+
 }
 
 /*contact us call action button*/

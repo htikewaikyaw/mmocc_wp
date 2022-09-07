@@ -18,12 +18,13 @@ jQuery(document).ready(function($) {
             $('header.cons-agency .nav-classic').css("background-color",'#f0f0f0');
             $('.box-header-nav .main-menu > .menu-item > a').css("color","#000");
             $('.box-header-nav .main-menu > .menu-item.current-menu-item > a').css("color","#F8931F");
-
-        }
-        else if($(this).scrollTop() < 50){
+            $('#trp-floater-ls.trp-color-dark').css("background","rgba(241,147,31,0.6)");
+            
+        } else if($(this).scrollTop() < 50){
             $('header.cons-agency .nav-classic').css("background-color",'transparent');
             $('.box-header-nav .main-menu > .menu-item > a').css("color","#fff");
             $('.box-header-nav .main-menu > .menu-item.current-menu-item > a').css("color","#F8931F");
+            $('#trp-floater-ls.trp-color-dark').css("background","rgba(241,241,241,0.6)");
         }
     });
 });
