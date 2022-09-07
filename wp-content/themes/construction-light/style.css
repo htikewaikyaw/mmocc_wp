@@ -4342,6 +4342,8 @@ Comment Lists
 
 .cons_light_copyright {
     color: #fff;
+    /*additional css by myanmar occ team*/
+    text-align: center
 }
 
 .cons_light_copyright a,

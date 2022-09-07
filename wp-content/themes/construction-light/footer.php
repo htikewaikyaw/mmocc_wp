@@ -48,16 +48,16 @@
     <div class="sub_footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="cons_light_copyright">
                         <?php apply_filters( 'construction_light_copyright', 5 ); ?> <?php the_privacy_policy_link(); ?>
                     </div><!-- Copyright -->
                 </div>
-                <div class="col-lg-5 col-md-12 col-sm-12 text-right">
+                <!-- <div class="col-lg-5 col-md-12 col-sm-12 text-right">
                     <?php
-                        construction_light_topheader_social();
+                       // construction_light_topheader_social();
                     ?>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
