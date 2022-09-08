@@ -17,7 +17,6 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 */
-
 /*additional font face by myanmar occ team*/
 @font-face {
     font-family: 'pyidaungsu';
@@ -26,7 +25,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
          font-weight: normal;
          font-style: normal;
 }
-
 @font-face {
     font-family: 'Myanmar3';
     src:url('fonts/Myanmar3.ttf.woff') format('woff'),
@@ -488,12 +486,12 @@ header.cons-agency .nav-classic {
 .banner-slider .slider-item .slider-content .slider-title{
     word-wrap: break-word;
     line-height: 1.3em;
-    font-family: Oswald,Myanmar3;
+    font-family: "Oswald","pyidaungsu";
 }
 .banner-slider .slider-item .slider-content p{
     word-wrap: break-word;
     line-height: 2em;
-    font-family: Oswald,Myanmar3;
+    font-family: "Oswald","pyidaungsu";
 }
 .banner-slider .slider-item .slider-content .btn-area .btn-border,
 .cons_light_feature .feature-list .bottom-content h4,
@@ -504,7 +502,7 @@ header.cons-agency .nav-classic {
 .calltoaction_promo_wrapper .calltoaction_full_widget_content h2,
 .site-footer .textwidget h4, 
 .site-footer .textwidget p {
-    font-family: "Oswald",Myanmar3;
+    font-family: "Oswald","pyidaungsu";
 }
 
 #rpwwt-recent-posts-widget-with-thumbnails-9 h2{
@@ -668,22 +666,21 @@ header.cons-agency .nav-classic .header-middle-inner{
 .elementor-2493 .elementor-element.elementor-element-89558c5 .elementor-heading-title,
 .elementor-widget-container,
 .elementor-widget-container > .elementor-heading-title {
-    font-family: "Myanmar3";
+    font-family: "pyidaungsu";
     line-height: 1.5em;
 }
 .elementor-widget-image-box .elementor-image-box-description{
-    font-family: "Myanmar3" ;
+    font-family: "pyidaungsu" ;
     line-break: anywhere;
 }
 .entry-title{
     word-wrap: break-word;
-    font-family: "Oswald",Myanmar3 !important;
+    font-family: "Oswald","pyidaungsu" !important;
 }
 .breadcrumb ul li{
-    font-family: "Oswald",Myanmar3 !important;
+    font-family: "Oswald","pyidaungsu" !important;
 }
 @media (max-width: 991.98px) { 
-    
     /* Latest News */
     .cons_light_blog-list-area article {
         width: 100%;
@@ -759,7 +756,7 @@ header.cons-agency .nav-classic .header-middle-inner{
         width: 100%;
     }
     #free-hand-text-section h3{
-        font-family: "Oswald,Myanmar3";
+        font-family: "Oswald,pyidaungsu";
         word-wrap: break-word;
         text-align: center;
     }
