@@ -487,6 +487,12 @@ var wpwKits;
             wpwMsg.double_nobg(sugMsg,sugOptions);
 
         },
+        YesNo:function () {
+            var msg = "You want to go back main function?";
+            var sugOptions = '<span class="qcld-chatbot-wildcard qc_draggable_item_remove ui-sortable-handle" data-wildcart="yes">YES</span> \
+                                <span class="qcld-chatbot-wildcard qc_draggable_item_remove ui-sortable-handle" data-wildcart="no">NO</span>';
+            wpwMsg.double_nobg(msg,sugOptions);
+        },
 
         videohandler:function () {
             $(globalwpw.settings.messageLastChild+' .wp-chatbot-paragraph').html(function(i, html) {
@@ -948,8 +954,13 @@ var wpwKits;
             wpwTree.df_multi_handle(responses);
 			
 		},
+        
         support:function (msg) {
-            if(globalwpw.wildCard==1 && globalwpw.supportStep=='welcome'){
+            //to go back to main function. by hwk.
+            if(globalwpw.wildCard==1 && globalwpw.supportStep=='mainfunction'){
+                var queryAns=globalwpw.settings.obj.support_ans[1];
+                wpwMsg.single(queryAns);
+            }else if(globalwpw.wildCard==1 && globalwpw.supportStep=='welcome'){
                 var welcomeMsg= wpwKits.randomMsg(globalwpw.settings.obj.support_welcome);
                 var orPhoneSuggest = '';
                 if(globalwpw.settings.obj.support_query.length>0){
@@ -1317,9 +1328,10 @@ var wpwKits;
             return index;
         },
        bot:function(msg){
+           
             //Disable the Editor
             
-//simple_response_intent
+            //simple_response_intent
         
             var simple_response_intent = globalwpw.settings.obj.simple_response_intent;
 
@@ -1337,7 +1349,7 @@ var wpwKits;
          
          if(globalwpw.wildcardsHelp.indexOf(msg.toLowerCase())>-1){
              
-             
+               
                 if(globalwpw.wildCard==7){
                     wpwTree.formbuilder_force_complete( msg );
                 }
@@ -1380,8 +1392,6 @@ var wpwKits;
 					wpwKits.enableEditor(wpwKits.randomMsg(globalwpw.settings.obj.send_a_msg));
 					
                 }
-
-				
                 if(msg.toLowerCase()==globalwpw.settings.obj.sys_key_reset.toLowerCase()){
                     globalwpw.wildCard=25;
                     globalwpw.resetStep='welcome';
@@ -1479,7 +1489,7 @@ var wpwKits;
                  *   Greeting part
                  *   bot action
                  */
-				
+               
                 if(globalwpw.wildCard==0){
 					//When intialize 1 and don't have cookies then keep  the name of shooper in in cookie
 					if(globalwpw.initialize==1 && !localStorage.getItem('shopper')  && globalwpw.wildCard==0){
@@ -1827,7 +1837,7 @@ var wpwKits;
                     
                 }
             })
-
+            
             if( menu_html != '' ){
                 globalwpw.wildcards = menu_html;
             }else{
@@ -2059,7 +2069,17 @@ var wpwKits;
                 //keeping value in localstorage
                 localStorage.setItem("wildCard",  globalwpw.wildCard);
             }
-
+            if(wildcardData=='yes'){
+               
+                globalwpw.wildCard=1;
+                globalwpw.supportStep='mainfunction';
+                wpwAction.bot("from urinzun main function");
+            }
+            if(wildcardData=='no'){
+                globalwpw.wildCard=1;
+                globalwpw.supportStep='welcome';
+                wpwAction.bot('from wildcard support');
+            }
             if(wildcardData=='messenger'){
                 var url='https://www.messenger.com/t/'+globalwpw.settings.obj.fb_page_id;
                 var win = window.open(url, '_blank');
@@ -2330,18 +2350,45 @@ var wpwKits;
             var shopperChoose=$(this).text();
             var queryIndex=$(this).attr('data-query-index');
             wpwMsg.shopper_choice(shopperChoose);
+
+            //FAQ for Urizun Main Functions 
+            globalwpw.settings.obj.support_ans["patient-reg"] = 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.";
+            globalwpw.settings.obj.support_ans["search-diseases"] = 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.";
+            globalwpw.settings.obj.support_ans["order-result-ref"] = 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.";
+            globalwpw.settings.obj.support_ans["electronic-medical-rec"] = 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.";
+            globalwpw.settings.obj.support_ans["nursing-support-fun"] = 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.";
+            globalwpw.settings.obj.support_ans["authentication"] = 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.";
             //Now answering the query.
             var queryAns=globalwpw.settings.obj.support_ans[queryIndex];
             wpwMsg.single(queryAns);
+            //Asking go back to main function .
+            var faqsection = ['patient-reg','search-diseases','order-result-ref','electronic-medical-rec','nursing-support-fun','authentication'];
+            if(faqsection.includes(queryIndex)){
+                setTimeout(function(){
+                    wpwKits.YesNo();
+                },globalwpw.settings.wildcardsShowTime);
+            }
             //Asking email after showing answer.
-            var orPhoneSuggest='';
-            setTimeout(function(){
-                if(globalwpw.settings.obj.call_sup!=1) {
-                    orPhoneSuggest = '<span class="qcld-chatbot-suggest-phone" >' + wpwKits.randomMsg(globalwpw.settings.obj.support_phone) + '</span>';
-                }
-                var orEmailSuggest='<span class="qcld-chatbot-suggest-email">'+wpwKits.randomMsg(globalwpw.settings.obj.support_email)+'</span>';
-                wpwKits.suggestEmail(orPhoneSuggest+orEmailSuggest);
-            },globalwpw.settings.wildcardsShowTime);
+            // var orPhoneSuggest='';
+            // setTimeout(function(){
+            //     if(globalwpw.settings.obj.call_sup!=1) {
+            //         orPhoneSuggest = '<span class="qcld-chatbot-suggest-phone" >' + wpwKits.randomMsg(globalwpw.settings.obj.support_phone) + '</span>';
+            //     }
+            //     var orEmailSuggest='<span class="qcld-chatbot-suggest-email">'+wpwKits.randomMsg(globalwpw.settings.obj.support_email)+'</span>';
+            //     wpwKits.suggestEmail(orPhoneSuggest+orEmailSuggest);
+            // },globalwpw.settings.wildcardsShowTime);
         });
         /*Support Email **/
         $(document).on('click','.qcld-chatbot-suggest-email',function (e) {

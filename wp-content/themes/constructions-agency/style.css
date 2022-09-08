@@ -636,6 +636,10 @@ header.cons-agency .nav-classic .header-middle-inner{
 #wp-chatbot-chat-container{
     bottom :10px!important;
 }
+.qcld-chatbot-support-items {
+    cursor: pointer;
+}
+
 @media (max-width: 991.98px) and (min-width: 576px) {
     .nav-classic .container .site-branding .brandinglogo-wrap img{
         width: 50%;
@@ -673,6 +677,11 @@ header.cons-agency .nav-classic .header-middle-inner{
 .breadcrumb ul li{
     font-family: "Oswald",Myanmar3 !important;
 }
+#free-hand-text-section h3{
+    font-family: "Oswald",Myanmar3 !important;
+}
+
+
 @media (max-width: 991.98px) { 
     
     /* Latest News */

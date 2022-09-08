@@ -465,7 +465,7 @@ jQuery(function ($) {
                 //first open then chatboard
                 if(localStorage.getItem("wpwHitory")){
                     $('.wp-chatbot-messages-wrapper').html(localStorage.getItem("wpwHitory"));
-                    $('.wp-chatbot-operation-option').each(function(){
+                    $('.ild').each(function(){
                         if($(this).attr('data-option')=='chat'){
                             $(this).parent().addClass('wp-chatbot-operation-active');
                         }else{
