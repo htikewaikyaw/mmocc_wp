@@ -18,6 +18,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 */
 
+/*additional font face by myanmar occ team*/
+@font-face {
+    font-family: 'pyidaungsu';
+    src: url('fonts/pyidaungsu.ttf') format('ttf'),
+         url('fonts/pyidaungsu.woff') format('woff');
+         font-weight: normal;
+         font-style: normal;
+}
+
 @font-face {
     font-family: 'Myanmar3';
     src:url('fonts/Myanmar3.ttf.woff') format('woff'),
