@@ -68,13 +68,19 @@
 			} // if thumb
 		} // if show_thumb
 		// show title if wished
+
+		// show feature if status is feauted. //by hwk
+		$is_featured  = get_post_meta( get_the_ID(), '_wp_post_meta_feature', true ) ;
+		
 		if ( ! $bools[ 'hide_title' ] ) {
 			?>
 			<div class="bottom-content">
-				<div class="icon-box">
-					<!-- <i class="fab fa-android"></i> -->
-					<span>FEATURED</span>
-				</div>
+				<?php if($is_featured) {?>
+					<div class="icon-box">
+						<!-- <i class="fab fa-android"></i> -->
+						<span>FEATURED</span>
+					</div>
+				<?php }?>
 			<h4 class="rpwwt-post-title"><?php
 			$post_title = $this->get_the_trimmed_post_title();
 			if ( $post_title ) {
