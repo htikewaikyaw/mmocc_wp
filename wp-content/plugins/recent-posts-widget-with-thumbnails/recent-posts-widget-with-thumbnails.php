@@ -242,7 +242,7 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 		if ( isset( $query_args[ 'category__in' ] ) and $bools[ 'keep_sticky' ] ) {
 			add_filter( 'the_posts', array( $this, 'get_stickies_on_top' ) );
 		}
-
+		// echo $featured;exit;
 		if($featured){ //filter by featured
 			$r = new WP_Query( apply_filters( 'rpwwt_widget_posts_args', "meta_value=true" ) );
 		}

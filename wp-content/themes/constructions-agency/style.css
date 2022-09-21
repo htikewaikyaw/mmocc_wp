@@ -664,14 +664,18 @@ header.cons-agency .nav-classic .header-middle-inner{
 
 /* oversea remote work service Page*/
 .elementor-widget-wrap{
-    word-wrap: break-word;
+   line-break: anywhere;
 }
 .elementor-2493 .elementor-element.elementor-element-9ad28db > .elementor-widget-container,
 .elementor-2493 .elementor-element.elementor-element-89558c5 .elementor-heading-title,
 .elementor-widget-container,
 .elementor-widget-container > .elementor-heading-title {
-    font-family: "pyidaungsu";
+    font-family: "Oswald",pyidaungsu;
     line-height: 1.5em;
+}
+
+.elementor-widget-container span{
+    font-family: "Oswald",pyidaungsu;
 }
 .elementor-widget-image-box .elementor-image-box-description{
     font-family: "pyidaungsu" ;
@@ -679,16 +683,21 @@ header.cons-agency .nav-classic .header-middle-inner{
 }
 .entry-title{
     word-wrap: break-word;
-    font-family: "Oswald","pyidaungsu" !important;
+    font-family: "Oswald",pyidaungsu !important;
 }
 .breadcrumb ul li{
-    font-family: "Oswald","pyidaungsu" !important;
+    font-family: "Oswald",pyidaungsu !important;
 }
 #free-hand-text-section h3{
-    font-family: "Oswald",Myanmar3 !important;
+    font-family: "Oswald",pyidaungsu !important;
 }
 
-
+.box-header-nav .main-menu > .menu-item{
+    font-family: "Oswald",pyidaungsu;
+}
+.site-footer .widget .widget-title{
+    font-family: "Oswald",pyidaungsu;
+}
 @media (max-width: 991.98px) { 
     /* Latest News */
     .cons_light_blog-list-area article {
@@ -783,27 +792,7 @@ header.cons-agency .nav-classic .header-middle-inner{
     border: 1px solid #fff;
     color: #fff !important;
     border-radius:5px;
-    -webkit-box-shadow:1px 1px 0px 0px #2f2f2f;
-    -moz-box-shadow:1px 1px 0px 0px #2f2f2f;
-    box-shadow:1px 1px 0px 0px #2f2f2f;
-    background-color:transparent;
-    -webkit-animation: glowing 1300ms infinite;
-    -moz-animation: glowing 1300ms infinite;
-    -o-animation: glowing 1300ms infinite;
-    animation: glowing 1300ms infinite;
+    background-color:#f8931f;
 }
-@-webkit-keyframes glowing {
-    0% {
-    background-color: #ffc107;
-    -webkit-box-shadow: 0 0 3px #ffc107;
-    }
-    50% {
-    background-color: #f8931f;
-    -webkit-box-shadow: 0 0 15px #f8931f;
-    }
-    100% {
-    background-color: #ffc107;
-    -webkit-box-shadow: 0 0 3px #ffc107;
-    }
-}
+
     

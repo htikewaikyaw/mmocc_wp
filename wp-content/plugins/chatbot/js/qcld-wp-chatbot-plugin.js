@@ -488,7 +488,7 @@ var wpwKits;
 
         },
         YesNo:function () {
-            var msg = "You want to go back main function?";
+            var msg = "Want to go back to Urizun main features?";
             var sugOptions = '<span class="qcld-chatbot-wildcard qc_draggable_item_remove ui-sortable-handle" data-wildcart="yes">YES</span> \
                                 <span class="qcld-chatbot-wildcard qc_draggable_item_remove ui-sortable-handle" data-wildcart="no">NO</span>';
             wpwMsg.double_nobg(msg,sugOptions);
@@ -2376,19 +2376,34 @@ var wpwKits;
             //Asking go back to main function .
             var faqsection = ['patient-reg','search-diseases','order-result-ref','electronic-medical-rec','nursing-support-fun','authentication'];
             if(faqsection.includes(queryIndex)){
+                timeOutID = localStorage.getItem("timeOutID");
+                clearTimeout(timeOutID);
                 setTimeout(function(){
                     wpwKits.YesNo();
                 },globalwpw.settings.wildcardsShowTime);
+            }else {
+               // Asking email after showing answer.
+                var orPhoneSuggest='';
+                var timeOutID = ""
+                if(queryIndex == 1){
+                    var timeOutID =  setTimeout(function(){
+                        if(globalwpw.settings.obj.call_sup!=1) {
+                            orPhoneSuggest = '<span class="qcld-chatbot-suggest-phone" >' + wpwKits.randomMsg(globalwpw.settings.obj.support_phone) + '</span>';
+                        }
+                        var orEmailSuggest='<span class="qcld-chatbot-suggest-email">'+wpwKits.randomMsg(globalwpw.settings.obj.support_email)+'</span>';
+                        wpwKits.suggestEmail(orPhoneSuggest+orEmailSuggest);
+                    },globalwpw.settings.wildcardsShowTime);
+                }else{
+                    setTimeout(function(){
+                        if(globalwpw.settings.obj.call_sup!=1) {
+                            orPhoneSuggest = '<span class="qcld-chatbot-suggest-phone" >' + wpwKits.randomMsg(globalwpw.settings.obj.support_phone) + '</span>';
+                        }
+                        var orEmailSuggest='<span class="qcld-chatbot-suggest-email">'+wpwKits.randomMsg(globalwpw.settings.obj.support_email)+'</span>';
+                        wpwKits.suggestEmail(orPhoneSuggest+orEmailSuggest);
+                    },globalwpw.settings.wildcardsShowTime);
+                }
+                localStorage.setItem("timeOutID",  timeOutID);
             }
-            //Asking email after showing answer.
-            // var orPhoneSuggest='';
-            // setTimeout(function(){
-            //     if(globalwpw.settings.obj.call_sup!=1) {
-            //         orPhoneSuggest = '<span class="qcld-chatbot-suggest-phone" >' + wpwKits.randomMsg(globalwpw.settings.obj.support_phone) + '</span>';
-            //     }
-            //     var orEmailSuggest='<span class="qcld-chatbot-suggest-email">'+wpwKits.randomMsg(globalwpw.settings.obj.support_email)+'</span>';
-            //     wpwKits.suggestEmail(orPhoneSuggest+orEmailSuggest);
-            // },globalwpw.settings.wildcardsShowTime);
         });
         /*Support Email **/
         $(document).on('click','.qcld-chatbot-suggest-email',function (e) {
