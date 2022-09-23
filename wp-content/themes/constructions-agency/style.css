@@ -700,29 +700,14 @@ header.cons-agency .nav-classic .header-middle-inner{
 .site-footer .widget .widget-title{
     font-family: "Oswald",pyidaungsu;
 }
-@media (max-width: 991.98px) { 
-
-    /* back to top  styles */
-    #back-to-top .arrow-top {
-        left: 9px;
-        top: 6px;
-    }
-
-    #back-to-top .arrow-top-line {
-        top: 6px;
-        left: auto;
-        right: 11px;
-    }
-    #back-to-top {
-        right: 10px;
-        bottom: 10px;
-        height: 25px;
-        width: 25px;
-        bottom: 3px;
-    }
-    #back-to-top svg.progress-circle path {
-        stroke-width: 8;
-    }
+.modal-menu li a{
+    font-family: "Oswald",pyidaungsu;
+}
+#free-hand-text-section p{
+    font-family: "Oswald",pyidaungsu;
+    word-wrap: break-word;
+}
+@meda (max-width:767.98px) {
     /* Latest News */
     .cons_light_blog-list-area article {
         width: 100%;
@@ -746,6 +731,36 @@ header.cons-agency .nav-classic .header-middle-inner{
         margin:0px;
         padding:0px;
     }
+}
+@media (max-width: 991.98px) { 
+
+    /* back to top  styles */
+    #back-to-top .arrow-top {
+        left: 9px;
+        top: 6px;
+    }
+
+    #back-to-top .arrow-top-line {
+        top: 6px;
+        left: auto;
+        right: 11px;
+    }
+    #back-to-top {
+        right: 10px;
+        bottom: 10px;
+        height: 25px;
+        width: 25px;
+        bottom: 3px;
+    }
+    /* contact btn */
+    .menu-button-contact{
+        display: inline-block!important;
+    }    
+
+    #back-to-top svg.progress-circle path {
+        stroke-width: 8;
+    }
+    
     /* home page banner section */
     .banner-slider .slider-item {
         height:400px;
@@ -796,6 +811,9 @@ header.cons-agency .nav-classic .header-middle-inner{
 
     #free-hand-text-section p{
         width: 100%;
+        font-family: "Oswald",Pyidaungsu;
+        word-wrap: break-word;
+        text-align: justify;
     }
     #free-hand-text-section h3{
         font-family: "Oswald,pyidaungsu";
