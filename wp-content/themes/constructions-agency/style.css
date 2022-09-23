@@ -628,10 +628,12 @@ header.cons-agency .nav-classic .header-middle-inner{
 }
 
 #back-to-top{
-    right:10px;
-    bottom:10px;
+    /* right:10px; */
+    /* bottom:10px; */
     height: 35px;
     width: 35px;
+    right: 6%;
+    bottom:8px;
 }
 #back-to-top .arrow-top{
     left:15px;
@@ -699,6 +701,28 @@ header.cons-agency .nav-classic .header-middle-inner{
     font-family: "Oswald",pyidaungsu;
 }
 @media (max-width: 991.98px) { 
+
+    /* back to top  styles */
+    #back-to-top .arrow-top {
+        left: 9px;
+        top: 6px;
+    }
+
+    #back-to-top .arrow-top-line {
+        top: 6px;
+        left: auto;
+        right: 11px;
+    }
+    #back-to-top {
+        right: 10px;
+        bottom: 10px;
+        height: 25px;
+        width: 25px;
+        bottom: 3px;
+    }
+    #back-to-top svg.progress-circle path {
+        stroke-width: 8;
+    }
     /* Latest News */
     .cons_light_blog-list-area article {
         width: 100%;
