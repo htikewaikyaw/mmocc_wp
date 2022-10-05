@@ -839,5 +839,9 @@ header.cons-agency .nav-classic .header-middle-inner{
     border-radius:5px;
     background-color:#f8931f;
 }
-
-    
+ /*  OJT pages */
+ section[data-id="f7c4264"]{
+    background:#eee;
+    padding:20px 0px;
+    margin-top:100px;
+ }
