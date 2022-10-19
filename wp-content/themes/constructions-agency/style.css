@@ -155,7 +155,8 @@ header.cons-agency .box-header-nav .main-menu{
 .cons_light_blog-list-area article,
 .cons_light_team_layout_two.layout_three .team-wrap,
 .cons_light_team_layout_two.layout_three .box figure{
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%)
+    /* box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%); */
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
 }
 .cons_light_team_layout_two.layout_three .team-wrap{
     width: 90%;
@@ -440,6 +441,8 @@ header.cons-agency .nav-classic {
     .cons_light_blog-list-area article {
         width: 100%;
         display: block;
+        text-align: center;
+        padding-top:20px;
     }
     .cons_light_blog-list-area article .blog-post-thumbnail{
         width: 100%;
@@ -447,6 +450,8 @@ header.cons-agency .nav-classic {
     .cons_light_blog-list-area article .box{
         width:100%;
         margin:0 auto;
+        text-align:center!important;
+        padding-top:20px;   
     }
     .construction-masonry article{
         display:block;
@@ -590,8 +595,9 @@ header.cons-agency .nav-classic .header-middle-inner{
 #trp-floater-ls-current-language a,#trp-floater-ls-language-list a{
     padding: 2px 5px;
 }
-.trp-color-dark #trp-floater-ls-language-list a{
-    font-size: 12px;
+.trp-color-dark #trp-floater-ls-language-list a:not([title='Myanmar']){
+    /* font-size: 12px; */
+    border-bottom:1px solid #fff;
 }
 
 #trp-floater-ls{

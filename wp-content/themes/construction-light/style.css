@@ -1,4 +1,4 @@
-/*!
+xx`/*!
 Theme Name: Construction Light
 Theme URI:http://sparklewpthemes.com/wordpress-themes/constructionlight/
 Author: Sparkle Themes
@@ -3391,7 +3391,8 @@ button.conslight-close-icon {
     margin-bottom: 20px;
 }
 #cl_blog article{
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    /* box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%); */
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
 }
 
 
